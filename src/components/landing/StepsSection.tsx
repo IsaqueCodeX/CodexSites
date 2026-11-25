@@ -12,32 +12,32 @@ interface Step {
 const steps: Step[] = [
   {
     number: 1,
-    title: "Conversa Inicial",
-    description: "Entendemos seu negócio, objetivos e público-alvo para traçar o plano perfeito.",
+    title: "Alinhamento Inicial",
+    description: "Entendemos seu negócio, público e objetivo para definir a melhor estrutura.",
     icon: <MessageSquare size={28} />,
   },
   {
     number: 2,
-    title: "Design Exclusivo",
-    description: "Criamos um layout moderno e personalizado que valoriza a imagem da sua marca.",
+    title: "Design Sob Medida",
+    description: "Criamos um visual exclusivo alinhado à identidade e ao posicionamento da sua marca.",
     icon: <Palette size={28} />,
   },
   {
     number: 3,
     title: "Desenvolvimento",
-    description: "Construímos a página com código de alta performance, velocidade e foco em conversão.",
+    description: "Construímos o site leve, responsivo e pronto para carregar rápido no celular.",
     icon: <Code size={28} />,
   },
   {
     number: 4,
-    title: "Revisões e Ajustes",
-    description: "Você acompanha e alinha os detalhes até ficar 100% satisfeito com o resultado.",
+    title: "Revisão e Ajustes",
+    description: "Você navega pela prévia e ajustamos os detalhes juntos antes de publicar.",
     icon: <Rocket size={28} />,
   },
   {
     number: 5,
-    title: "Lançamento!",
-    description: "Seu site entra no ar pronto para receber clientes e impulsionar suas vendas.",
+    title: "Publicação no Ar",
+    description: "Conectamos seu domínio e colocamos o site no ar pronto para gerar contatos.",
     icon: <PartyPopper size={28} />,
   },
 ];

@@ -14,24 +14,34 @@ interface FAQItem {
 
 const faqItems: FAQItem[] = [
   {
-    question: "Quanto tempo até meu site estar no ar vendendo?",
-    answer: "Nosso foco é agilidade com qualidade. Projetos como Landing Pages e Link na Bio são entregues em tempo recorde, prontos para receber tráfego e converter visitantes em clientes. Não perdemos tempo para que você não perca vendas.",
+    question: "Qual é o prazo real de entrega?",
+    answer:
+      "Depende do tipo de projeto, sempre contado após o alinhamento e o envio das informações da sua empresa: Bio Pro em até 3 dias úteis, Landing Page em até 7 dias úteis e Site Institucional entre 10 e 15 dias úteis.",
   },
   {
-    question: "Preciso ter todos os textos e imagens prontos?",
-    answer: "Não se preocupe! Atuamos de forma consultiva. Se você não tiver o conteúdo, nós te guiamos na estrutura ideal para alta conversão. Você não está sozinho nessa; construímos a autoridade da sua marca juntos.",
+    question: "Preciso ter todos os textos e fotos prontos?",
+    answer:
+      "Não. Se você já tiver material, usamos tudo. Se não tiver, nós organizamos a estrutura das seções e te ajudamos a escrever textos claros e objetivos para o seu público — sem você travar nessa etapa.",
+  },
+  {
+    question: "E o domínio e a hospedagem? Existe mensalidade?",
+    answer:
+      "Não cobramos mensalidade obrigatória pelo site. Você precisa apenas do seu domínio (um .com.br custa em torno de R$ 40 por ano no Registro.br) e, quando o projeto exigir, da hospedagem. Nós te ajudamos a registrar e configurar tudo no seu nome.",
+  },
+  {
+    question: "Como funciona o pagamento?",
+    answer:
+      "Trabalhamos de forma transparente: 50% de entrada para iniciar o projeto e 50% na entrega, após sua aprovação. Você pode pagar via Pix, boleto ou parcelar em até 12x no cartão (com as taxas da operadora).",
   },
   {
     question: "O site vai funcionar bem no celular?",
-    answer: "Absolutamente. Adotamos a metodologia 'Mobile First'. Seu site será uma experiência fluida, rápida e intuitiva em qualquer dispositivo, garantindo que você converta leads onde quer que eles estejam.",
+    answer:
+      "Sim. Desenvolvemos pensando primeiro em quem acessa pelo celular e pelo 4G, já que a maior parte dos cliques vindos do Instagram e do Google acontece em telas móveis.",
   },
   {
-    question: "Eu serei o dono do meu site?",
-    answer: "Com certeza! O site, o domínio e todo o código são 100% seus. Não prendemos clientes com contratos abusivos. Queremos que você fique conosco pelos resultados que geramos e não por obrigação.",
-  },
-  {
-    question: "Por que investir em um site profissional agora?",
-    answer: "Um site profissional não é um custo, é um investimento. Aplicamos estratégias de design, SEO e performance que ferramentas gratuitas não oferecem. É a diferença entre ter apenas um 'cartão de visita' e uma verdadeira máquina de vendas 24h.",
+    question: "O site e o código ficam no meu nome?",
+    answer:
+      "Sim, 100% seus. Domínio, arquivos e código pertencem a você, sem contrato de fidelidade nem dependência para continuar com o site no ar.",
   },
 ];
 

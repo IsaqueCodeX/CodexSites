@@ -29,17 +29,16 @@ const HeroSection = () => {
               id="hero-title"
               className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.55rem] font-extrabold leading-[1.14] mb-6 tracking-tight text-white"
             >
-              A solução digital certa para o seu cliente{" "}
+              Sites sob medida para{" "}
               <span className="text-gradient-hero">
-                encontrar você na internet.
+                transformar visitantes em clientes no WhatsApp.
               </span>
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl text-white/85 mb-9 max-w-xl leading-relaxed font-light">
-              De <span className="font-semibold text-white">Landing Pages</span>,{" "}
+              Criamos <span className="font-semibold text-white">Landing Pages</span>,{" "}
               <span className="font-semibold text-white">Sites Institucionais</span> e{" "}
-              <span className="font-semibold text-white">Bio para redes sociais</span>{" "}
-              — seja qual for o seu projeto, criamos soluções que transmitem autoridade e colocam sua empresa no mercado digital.
+              <span className="font-semibold text-white">Bio Pro</span> rápidos, modernos e prontos para converter tráfego do Google e do Instagram.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
@@ -49,7 +48,7 @@ const HeroSection = () => {
                 className="bg-white text-[#0052ff] hover:bg-[#eef5ff] text-lg sm:text-xl font-extrabold group w-full sm:w-auto hover:scale-105 transition-all duration-300 py-6 rounded-2xl shadow-[0_14px_35px_rgba(0,0,0,0.22)]"
               >
                 <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
-                  Sim, quero meu site profissional
+                  Solicitar orçamento no WhatsApp
                   <ArrowRight
                     className="ml-2 transition-transform duration-200 group-hover:translate-x-1.5"
                     size={22}

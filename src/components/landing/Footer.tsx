@@ -14,7 +14,7 @@ const Footer = () => {
               className="h-14 w-auto mb-4 mx-auto md:mx-0 object-contain"
             />
             <p className="text-white/70 text-sm max-w-xs">
-              Transformando ideias em presença digital de alto impacto.
+              Criação de Landing Pages, Sites Institucionais e Bio Pro focados em conversão.
             </p>
           </div>
 

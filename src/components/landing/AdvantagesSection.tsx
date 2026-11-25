@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 
 const advantages = [
-  { title: "Entrega Rápida", description: "Seu site no ar em até 7 dias úteis, sem enrolação" },
-  { title: "100% Responsivo", description: "Perfeito no celular, tablet e computador" },
-  { title: "Código Limpo e Seguro", description: "Tecnologia moderna com proteção e estabilidade" },
-  { title: "Foco em Vendas", description: "Estruturado para atrair visitantes e converter em clientes" },
-  { title: "Suporte Próximo", description: "Fale direto com a equipe que construiu o seu projeto" },
-  { title: "Sem Mensalidade Surpresa", description: "Preço claro e fechado, sem taxas escondidas" },
+  { title: "Entrega Ágil", description: "Landing Pages no ar em até 7 dias úteis e Bio Pro em até 3 dias úteis" },
+  { title: "Pensado Para o Celular", description: "Estrutura feita primeiro para telas móveis, onde nasce a maioria dos contatos" },
+  { title: "Rápido Até no 4G", description: "Carregamento leve que evita que o cliente feche a página antes de ver sua oferta" },
+  { title: "Foco em Conversão", description: "Layout e chamadas planejadas para levar o visitante direto para o seu WhatsApp" },
+  { title: "Atendimento Direto", description: "Você fala direto com quem desenvolve o seu projeto, sem intermediários" },
+  { title: "Sem Mensalidade Obrigatória", description: "Valor fechado e transparente — o site e o domínio ficam 100% no seu nome" },
 ];
 
 const containerVariants = {

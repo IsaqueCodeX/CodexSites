@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Check, Star, Zap, Crown, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 interface ServicePlan {
   id: number;
@@ -8,14 +9,13 @@ interface ServicePlan {
   pricePrefix?: string;
   price: string;
   paymentHint: string;
+  ctaLabel: string;
   description: string;
   features: string[];
   icon: React.ReactNode;
   popular?: boolean;
   custom?: boolean;
 }
-
-import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 const servicePlans: ServicePlan[] = [
   {
@@ -24,13 +24,14 @@ const servicePlans: ServicePlan[] = [
     pricePrefix: "A partir de",
     price: "R$ 397",
     paymentHint: "em até 12x no cartão ou Pix",
-    description: "Perfeito para Instagram e redes sociais",
+    ctaLabel: "Orçar Bio Pro",
+    description: "Substitua links genéricos por uma página com a cara da sua marca",
     icon: <Zap className="text-[#67e8f9]" size={28} />,
     features: [
-      "Página personalizada de alto impacto",
-      "Design responsivo focado no celular",
-      "Links e botões ilimitados",
-      "Integração direta com WhatsApp",
+      "Entrega em até 3 dias úteis",
+      "Visual sob medida (fora do Linktree comum)",
+      "Botões e links ilimitados para suas ofertas",
+      "Integração direta com WhatsApp e redes sociais",
     ],
   },
   {
@@ -39,14 +40,15 @@ const servicePlans: ServicePlan[] = [
     pricePrefix: "A partir de",
     price: "R$ 997",
     paymentHint: "em até 12x no cartão ou Pix",
-    description: "Focada em captura de leads e fechamento",
+    ctaLabel: "Orçar Landing Page",
+    description: "Página focada em converter tráfego do Google e Instagram em contatos",
     icon: <Star className="text-[#67e8f9]" size={28} />,
     popular: true,
     features: [
-      "Página única de altíssima conversão",
-      "Design exclusivo sob medida",
-      "Integração rápida com WhatsApp",
-      "SEO e performance otimizados",
+      "Entrega em até 7 dias úteis",
+      "Layout exclusivo e estrutura orientada para vendas",
+      "Integração com WhatsApp, Pixel e Google Analytics",
+      "SEO técnico e carregamento leve no celular",
     ],
   },
   {
@@ -55,13 +57,14 @@ const servicePlans: ServicePlan[] = [
     pricePrefix: "A partir de",
     price: "R$ 2.497",
     paymentHint: "em até 12x no cartão ou Pix",
-    description: "Para empresas que buscam máxima autoridade",
+    ctaLabel: "Orçar Site Institucional",
+    description: "Presença completa para empresas que buscam solidez e autoridade",
     icon: <Crown className="text-[#67e8f9]" size={28} />,
     features: [
-      "Até 5 páginas completas e dinâmicas",
-      "Design corporativo de alto padrão",
-      "Formulário inteligente com validação",
-      "Otimização completa de SEO e velocidade",
+      "Entrega entre 10 e 15 dias úteis",
+      "Até 5 páginas completas e sob medida",
+      "Formulários e WhatsApp integrados",
+      "SEO estruturado para posicionamento no Google",
     ],
   },
   {
@@ -70,14 +73,15 @@ const servicePlans: ServicePlan[] = [
     pricePrefix: "Projeto exclusivo",
     price: "Sob Consulta",
     paymentHint: "proposta conforme escopo",
-    description: "Para projetos únicos com demandas específicas",
+    ctaLabel: "Solicitar proposta",
+    description: "Para empresas com fluxos específicos, catálogos ou integrações",
     icon: <Rocket className="text-[#67e8f9]" size={28} />,
     custom: true,
     features: [
-      "Consultoria técnica especializada",
-      "Funcionalidades sob demanda",
-      "Integrações de sistemas e APIs",
-      "Solução 100% personalizada",
+      "Levantamento técnico e arquitetura sob medida",
+      "Funcionalidades e páginas sem limite rígido",
+      "Integrações com CRMs, sistemas e APIs",
+      "Cronograma e entrega dedicados ao projeto",
     ],
   },
 ];
@@ -198,7 +202,7 @@ const ServicesSection = () => {
                     : "bg-primary text-primary-foreground hover:bg-[#0066ff] shadow-[0_10px_25px_rgba(0,82,255,0.25)]"
                 }`}
               >
-                {plan.custom ? "Solicitar Orçamento" : "Quero Este Plano"}
+                {plan.ctaLabel}
               </Button>
             </motion.div>
           ))}

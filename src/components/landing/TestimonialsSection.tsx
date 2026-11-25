@@ -135,7 +135,7 @@ const TestimonialsSection = () => {
             className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fbe5b] text-white font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-lg"
           >
             <MessageCircle size={24} />
-            Consulte o Especialista
+            Quero um site assim para o meu negócio
           </a>
           <p className="mt-4 text-muted-foreground text-sm">
             Fale diretamente conosco no WhatsApp e tire suas dúvidas

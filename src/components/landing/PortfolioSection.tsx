@@ -15,16 +15,23 @@ const PortfolioSection = () => {
   return (
     <section id="portfolio" aria-labelledby="portfolio-title" className="py-20 bg-[#f3f7fd] dark:bg-slate-900">
       <div className="container mx-auto px-4">
-        <motion.h2
-          id="portfolio-title"
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12"
+          className="text-center mb-12"
         >
-          NOSSO <span className="text-primary dark:text-[#60a5fa]">PORTFÓLIO</span>
-        </motion.h2>
+          <h2
+            id="portfolio-title"
+            className="text-3xl md:text-4xl font-bold text-foreground mb-3"
+          >
+            Nosso <span className="text-primary dark:text-[#60a5fa]">Portfólio</span>
+          </h2>
+          <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
+            Explore projetos reais por categoria e veja o padrão de design e velocidade que entregamos.
+          </p>
+        </motion.div>
 
         {/* Filtros */}
         <motion.div
