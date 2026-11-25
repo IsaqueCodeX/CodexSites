@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle } from "lucide-react";
 import { useState, useEffect } from "react";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 const WhatsAppButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -27,7 +28,7 @@ const WhatsAppButton = () => {
     <AnimatePresence>
       {isVisible && (
         <motion.a
-          href="https://wa.me/qr/SW4TC4J2EZVNM1"
+          href={getWhatsAppUrl()}
           target="_blank"
           rel="noopener noreferrer"
           initial={{ scale: 0, opacity: 0 }}

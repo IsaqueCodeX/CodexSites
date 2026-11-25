@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 import {
   Accordion,
   AccordionContent,
@@ -88,7 +89,7 @@ const FAQSection = () => {
           <p className="text-muted-foreground">
             Ainda tem dúvidas?{" "}
             <a
-              href="https://wa.me/qr/SW4TC4J2EZVNM1"
+              href={getWhatsAppUrl("Olá! Tenho uma dúvida sobre os sites da CodexSites.")}
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary dark:text-[#60a5fa] font-semibold hover:underline"

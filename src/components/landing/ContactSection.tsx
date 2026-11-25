@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Send, CheckCircle } from "lucide-react";
+import { MessageCircle, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
 
-const WHATSAPP_URL = "https://wa.me/qr/SW4TC4J2EZVNM1";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -45,11 +45,9 @@ const ContactSection = () => {
 
     setIsSubmitting(true);
 
-    const whatsappMessage = encodeURIComponent(
-      `Olá! Meu nome é ${formData.name.trim()}.\n\nEmail: ${formData.email.trim()}\nTelefone: ${formData.phone.trim() || "Não informado"}\n\nMensagem: ${formData.message.trim()}`
-    );
+    const whatsappMessage = `Olá! Meu nome é ${formData.name.trim()}.\n\nEmail: ${formData.email.trim()}\nTelefone: ${formData.phone.trim() || "Não informado"}\n\nMensagem: ${formData.message.trim()}`;
 
-    window.open(`${WHATSAPP_URL}?text=${whatsappMessage}`, "_blank");
+    window.open(getWhatsAppUrl(whatsappMessage), "_blank", "noopener,noreferrer");
 
     toast.success("Redirecionando para o WhatsApp...");
 
@@ -159,11 +157,14 @@ const ContactSection = () => {
                 </>
               ) : (
                 <>
-                  <Send className="mr-2" size={20} />
-                  Enviar Mensagem
+                  <MessageCircle className="mr-2" size={20} />
+                  Enviar pelo WhatsApp
                 </>
               )}
             </Button>
+            <p className="text-center text-xs text-muted-foreground">
+              Ao enviar, abriremos seu WhatsApp com a conversa pronta para atendimento direto.
+            </p>
           </form>
         </motion.div>
       </div>

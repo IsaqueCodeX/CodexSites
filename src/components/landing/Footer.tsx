@@ -11,9 +11,9 @@ const Footer = () => {
               alt="CodexSites"
               width={2172}
               height={724}
-              className="h-[92px] w-auto mb-4 mx-auto md:mx-0 object-contain"
+              className="h-14 w-auto mb-4 mx-auto md:mx-0 object-contain"
             />
-            <p className="text-white/60 text-sm max-w-xs">
+            <p className="text-white/70 text-sm max-w-xs">
               Transformando ideias em presença digital de alto impacto.
             </p>
           </div>
@@ -49,7 +49,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-8 pt-8 text-center text-white/40 text-xs">
+        <div className="border-t border-white/10 mt-8 pt-8 text-center text-white/60 text-xs">
           <p>© 2026 CodexSites. Todos os direitos reservados.</p>
         </div>
       </div>

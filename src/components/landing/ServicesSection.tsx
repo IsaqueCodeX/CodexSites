@@ -5,7 +5,9 @@ import { Button } from "@/components/ui/button";
 interface ServicePlan {
   id: number;
   name: string;
+  pricePrefix?: string;
   price: string;
+  paymentHint: string;
   description: string;
   features: string[];
   icon: React.ReactNode;
@@ -13,18 +15,20 @@ interface ServicePlan {
   custom?: boolean;
 }
 
-const WHATSAPP_URL = "https://wa.me/qr/SW4TC4J2EZVNM1";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 const servicePlans: ServicePlan[] = [
   {
     id: 1,
-    name: "Link na Bio",
-    price: "R$ 497",
+    name: "Bio Pro Instagram",
+    pricePrefix: "A partir de",
+    price: "R$ 397",
+    paymentHint: "em até 12x no cartão ou Pix",
     description: "Perfeito para Instagram e redes sociais",
-    icon: <Zap className="text-primary dark:text-[#60a5fa]" size={30} />,
+    icon: <Zap className="text-[#67e8f9]" size={28} />,
     features: [
       "Página personalizada de alto impacto",
-      "Design responsivo no celular",
+      "Design responsivo focado no celular",
       "Links e botões ilimitados",
       "Integração direta com WhatsApp",
     ],
@@ -32,23 +36,27 @@ const servicePlans: ServicePlan[] = [
   {
     id: 2,
     name: "Landing Page",
+    pricePrefix: "A partir de",
     price: "R$ 997",
+    paymentHint: "em até 12x no cartão ou Pix",
     description: "Focada em captura de leads e fechamento",
-    icon: <Star className="text-primary dark:text-[#60a5fa]" size={30} />,
+    icon: <Star className="text-[#67e8f9]" size={28} />,
     popular: true,
     features: [
       "Página única de altíssima conversão",
       "Design exclusivo sob medida",
       "Integração rápida com WhatsApp",
-      "SEO otimizado para o Google",
+      "SEO e performance otimizados",
     ],
   },
   {
     id: 3,
     name: "Site Institucional",
+    pricePrefix: "A partir de",
     price: "R$ 2.497",
+    paymentHint: "em até 12x no cartão ou Pix",
     description: "Para empresas que buscam máxima autoridade",
-    icon: <Crown className="text-primary dark:text-[#60a5fa]" size={30} />,
+    icon: <Crown className="text-[#67e8f9]" size={28} />,
     features: [
       "Até 5 páginas completas e dinâmicas",
       "Design corporativo de alto padrão",
@@ -59,9 +67,11 @@ const servicePlans: ServicePlan[] = [
   {
     id: 4,
     name: "Personalizado",
-    price: "Sob Medida",
+    pricePrefix: "Projeto exclusivo",
+    price: "Sob Consulta",
+    paymentHint: "proposta conforme escopo",
     description: "Para projetos únicos com demandas específicas",
-    icon: <Rocket className="text-primary dark:text-[#60a5fa]" size={30} />,
+    icon: <Rocket className="text-[#67e8f9]" size={28} />,
     custom: true,
     features: [
       "Consultoria técnica especializada",
@@ -74,8 +84,11 @@ const servicePlans: ServicePlan[] = [
 
 const ServicesSection = () => {
   const handleWhatsApp = (planName: string) => {
-    const message = encodeURIComponent(`Olá! Tenho interesse no plano ${planName}. Podemos conversar?`);
-    window.open(`${WHATSAPP_URL}?text=${message}`, "_blank", "noopener,noreferrer");
+    window.open(
+      getWhatsAppUrl(`Olá! Tenho interesse no plano ${planName}. Podemos conversar?`),
+      "_blank",
+      "noopener,noreferrer"
+    );
   };
 
   return (
@@ -113,52 +126,66 @@ const ServicesSection = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
-              className={`relative bg-slate-900/50 backdrop-blur-sm rounded-2xl p-6 flex flex-col shadow-xl transition-all duration-300 border border-white/10 ${
+              transition={{ duration: 0.5, delay: index * 0.12 }}
+              className={`relative bg-slate-900/55 backdrop-blur-sm rounded-2xl p-6 flex flex-col shadow-xl transition-all duration-300 border border-white/15 ${
                 plan.popular
-                  ? "ring-2 ring-[#7dd3fc] md:scale-105 z-10 shadow-[0_20px_50px_rgba(0,20,60,0.28)]"
-                  : "hover:shadow-2xl hover:-translate-y-1"
+                  ? "ring-2 ring-[#7dd3fc] md:scale-[1.03] z-10 shadow-[0_20px_50px_rgba(0,20,60,0.32)]"
+                  : "hover:border-white/25 hover:shadow-2xl hover:-translate-y-1"
               }`}
             >
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                  <span className="bg-codex-highlight text-codex-navy text-xs font-black px-4 py-1.5 rounded-full shadow-lg tracking-wider">
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
+                  <span className="bg-codex-highlight text-codex-navy text-xs font-black px-4 py-1.5 rounded-full shadow-lg tracking-wider whitespace-nowrap">
                     MAIS POPULAR
                   </span>
                 </div>
               )}
 
               <div className="text-center mb-6">
-                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 mb-4">
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-white/10 border border-white/15 mb-4">
                   {plan.icon}
                 </div>
-                <h3 className="text-xl font-bold text-[#67e8f9] mb-2">{plan.name}</h3>
-                <p className="text-sm text-white/80">{plan.description}</p>
+                <h3 className="text-xl font-bold text-[#67e8f9] mb-2">
+                  {plan.name}
+                </h3>
+                <p className="text-sm text-white/80 leading-relaxed">
+                  {plan.description}
+                </p>
               </div>
 
-              <div className="text-center mb-6">
-                <span className="sr-only">Preço: </span>
-                <span className="text-3xl font-extrabold text-white">
-                  {plan.price}
-                </span>
-                {!plan.custom && <span className="text-muted-foreground text-sm"> /projeto</span>}
-                {!plan.custom && (
-                  <p className="text-xs text-white/70 mt-1">
-                    ou a partir de 12x de{" "}
-                    {plan.id === 1
-                      ? "R$ 41,42"
-                      : plan.id === 2
-                      ? "R$ 83,08"
-                      : "R$ 208,08"}
-                  </p>
+              <div className="text-center mb-6 pb-6 border-b border-white/10">
+                {plan.pricePrefix && (
+                  <span className="block text-[11px] uppercase tracking-widest font-semibold text-white/60 mb-1">
+                    {plan.pricePrefix}
+                  </span>
                 )}
+                <div className="flex items-baseline justify-center gap-1">
+                  <span className="sr-only">Preço: </span>
+                  <span className="text-3xl font-extrabold text-white tracking-tight">
+                    {plan.price}
+                  </span>
+                  {!plan.custom && (
+                    <span className="text-white/65 text-xs font-medium">
+                      /projeto
+                    </span>
+                  )}
+                </div>
+                <p className="text-xs text-white/70 mt-1.5">
+                  {plan.paymentHint}
+                </p>
               </div>
 
               <ul className="space-y-3 mb-8 flex-grow">
                 {plan.features.map((feature, i) => (
-                  <li key={i} className="flex items-center gap-2">
-                    <Check aria-hidden="true" className="text-primary dark:text-[#60a5fa] shrink-0" size={16} />
-                    <span className="text-sm text-white/90">{feature}</span>
+                  <li key={i} className="flex items-start gap-2.5">
+                    <Check
+                      aria-hidden="true"
+                      className="text-[#67e8f9] shrink-0 mt-0.5"
+                      size={16}
+                    />
+                    <span className="text-sm text-white/90 leading-snug">
+                      {feature}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -171,7 +198,7 @@ const ServicesSection = () => {
                     : "bg-primary text-primary-foreground hover:bg-[#0066ff] shadow-[0_10px_25px_rgba(0,82,255,0.25)]"
                 }`}
               >
-                {plan.custom ? "Falar com Especialista" : "Quero Este Plano"}
+                {plan.custom ? "Solicitar Orçamento" : "Quero Este Plano"}
               </Button>
             </motion.div>
           ))}
@@ -181,19 +208,19 @@ const ServicesSection = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-center text-white/75 mt-10 text-sm max-w-2xl mx-auto"
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="text-center text-white/80 mt-10 text-sm max-w-2xl mx-auto"
         >
-          Pagamento facilitado: até 12x no cartão via link de pagamento (sujeito a taxas da operadora), além de Pix e boleto.
+          Pagamento facilitado via Pix, boleto ou em até 12x no cartão (sujeito às taxas da operadora).
         </motion.p>
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.7 }}
-          className="text-center text-white/60 mt-4 text-sm"
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="text-center text-white/65 mt-3 text-xs sm:text-sm max-w-2xl mx-auto"
         >
-          * Valores transparentes sem mensalidades ou taxas ocultas. Entre em contato para orçamentos customizados.
+          Valores de referência sem mensalidade obrigatória — o orçamento final acompanha a complexidade e os recursos do seu projeto.
         </motion.p>
       </div>
     </section>

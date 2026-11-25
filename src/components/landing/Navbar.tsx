@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import ThemeToggle from "@/components/ThemeToggle";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +37,7 @@ const Navbar = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-codex-navy/95 backdrop-blur-md border-b border-white/10 ${
-        isScrolled || isOpen ? "shadow-xl py-2" : "py-3"
+        isScrolled || isOpen ? "shadow-xl py-2" : "py-2.5"
       }`}
     >
       <nav className="container mx-auto px-4" aria-label="Navegação principal">
@@ -52,7 +53,7 @@ const Navbar = () => {
               alt="CodexSites"
               width={2172}
               height={724}
-              className="h-[72px] md:h-[84px] w-auto object-contain"
+              className="h-11 md:h-14 w-auto object-contain"
             />
           </a>
 
@@ -73,7 +74,7 @@ const Navbar = () => {
               className="btn-cta text-sm px-6 py-3 rounded-xl"
             >
               <a
-                href="https://wa.me/qr/SW4TC4J2EZVNM1"
+                href={getWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -122,7 +123,7 @@ const Navbar = () => {
                 ))}
                 <Button asChild className="btn-cta w-full rounded-xl">
                   <a
-                    href="https://wa.me/qr/SW4TC4J2EZVNM1"
+                    href={getWhatsAppUrl()}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

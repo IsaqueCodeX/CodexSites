@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 import { MessageSquare, Palette, Code, Rocket, PartyPopper } from "lucide-react";
 
 interface Step {
@@ -101,7 +102,7 @@ const StepsSection = () => {
           className="text-center mt-16"
         >
           <a
-            href="https://wa.me/qr/SW4TC4J2EZVNM1"
+            href={getWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-cta inline-flex items-center gap-2 text-base sm:text-lg px-8 py-4"

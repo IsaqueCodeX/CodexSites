@@ -1,60 +1,57 @@
 import { motion } from "framer-motion";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 import { MessageCircle, CheckCheck } from "lucide-react";
 
 interface Testimonial {
   id: number;
   name: string;
+  initials: string;
   role: string;
   company: string;
   content: string;
   time: string;
-  avatar: string;
 }
 
 const testimonials: Testimonial[] = [
   {
     id: 1,
     name: "Dra. Ana Paula Silva",
+    initials: "AP",
     role: "Proprietária",
     company: "Clínica Estética Renova",
     content:
       "O site anterior era lento e as pessoas desistiam antes de falar com a gente. Agora o cliente clica e já cai no WhatsApp com a mensagem pronta. Triplicamos as consultas no primeiro mês.",
     time: "09:42",
-    avatar:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=faces",
   },
   {
     id: 2,
     name: "Carlos Eduardo",
+    initials: "CE",
     role: "Fundador",
-    company: "Academia FitLife",
+    company: "Studio Move Fitness",
     content:
       "O design ficou moderno e abre rápido no celular. O investimento se pagou em 10 dias com as matrículas que vieram dos anúncios do Instagram.",
     time: "10:15",
-    avatar:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=faces",
   },
   {
     id: 3,
     name: "Mariana Costa",
+    initials: "MC",
     role: "Diretora Comercial",
-    company: "Horizon Imóveis",
+    company: "Vértice Imóveis",
     content:
       "Precisávamos de um site que passasse solidez para clientes de alto padrão. O resultado superou o que a gente esperava e já fechamos vendas que começaram por aqui.",
     time: "14:30",
-    avatar:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=faces",
   },
   {
     id: 4,
-    name: "Chef Roberto Santos",
+    name: "Roberto Santos",
+    initials: "RS",
     role: "Sócio",
-    company: "Love Brasa Steakhouse",
+    company: "Brasa & Mesa Grill",
     content:
       "O cardápio digital e o link da bio organizaram nossas reservas. Os clientes elogiam a facilidade e não perdemos mais contato no WhatsApp.",
     time: "16:45",
-    avatar:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=faces",
   },
 ];
 
@@ -95,13 +92,13 @@ const TestimonialsSection = () => {
                 style={{ clipPath: "polygon(100% 0, 0 0, 100% 100%)" }}
               />
 
-              <div className="flex items-center gap-3 mb-2">
-                <img
-                  src={testimonial.avatar}
-                  alt=""
+              <div className="flex items-center gap-3 mb-3">
+                <div
                   aria-hidden="true"
-                  className="w-10 h-10 rounded-full object-cover shrink-0"
-                />
+                  className="w-10 h-10 rounded-full bg-gradient-to-br from-[#0052ff] to-[#00a8ff] text-white font-bold text-xs tracking-wide flex items-center justify-center shrink-0 shadow-sm"
+                >
+                  {testimonial.initials}
+                </div>
                 <div className="min-w-0">
                   <p className="font-bold text-[#0052ff] dark:text-[#7dd3fc] text-sm truncate">
                     {testimonial.name}
@@ -132,7 +129,7 @@ const TestimonialsSection = () => {
           className="text-center"
         >
           <a
-            href="https://wa.me/qr/SW4TC4J2EZVNM1"
+            href={getWhatsAppUrl()}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1fbe5b] text-white font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-lg"
