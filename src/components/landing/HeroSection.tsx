@@ -1,117 +1,168 @@
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { useState, useEffect } from "react";
 
 const heroVideos = [
-
   {
-    src: "https://isaquesantosdev.com/wp-content/uploads/2026/02/Patitas-Co.-Pet-Shop-Grooming-em-Sao-Paulo-Google-Chrome-2026-02-15-20-14-56-Trim.mp4",
-    alt: "Patitas Co. Pet Shop Grooming",
+    src: "https://isaquesantosdev.com/wp-content/uploads/2026/02/Obsidian-Auto-Studio-_-Estetica-Automotiva-Premium-em-Sao-Paulo-Google-Chrome-2026-02-15-20-04-48.mp4",
+    alt: "Obsidian Auto Studio",
   },
   {
     src: "https://isaquesantosdev.com/wp-content/uploads/2026/02/Love-Brasa-—-Fogo-Carvao-_-Steakhouse-Sao-Paulo-Google-Chrome-2026-02-15-19-44-23.mp4",
     alt: "Love Brasa Steakhouse",
   },
   {
-    src: "https://isaquesantosdev.com/wp-content/uploads/2026/02/Obsidian-Auto-Studio-_-Estetica-Automotiva-Premium-em-Sao-Paulo-Google-Chrome-2026-02-15-20-04-48.mp4",
-    alt: "Obsidian Auto Studio",
+    src: "https://isaquesantosdev.com/wp-content/uploads/2026/02/Patitas-Co.-Pet-Shop-Grooming-em-Sao-Paulo-Google-Chrome-2026-02-15-20-14-56-Trim.mp4",
+    alt: "Patitas Co. Pet Shop Grooming",
   },
 ];
 
 const HeroSection = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const prefersReducedMotion = useReducedMotion();
 
   useEffect(() => {
+    if (prefersReducedMotion) {
+      return;
+    }
+
     const interval = setInterval(() => {
       setCurrentVideoIndex((prev) => (prev + 1) % heroVideos.length);
-    }, 8000); // 8 seconds per video
+    }, 8000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [prefersReducedMotion]);
 
   return (
-    <section id="home" className="gradient-cosmic min-h-screen flex items-center pt-20 overflow-hidden relative">
-      {/* Background decoration */}
-      <div className="absolute top-20 left-10 w-32 h-32 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-      <div className="absolute top-40 right-10 w-32 h-32 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-      <div className="absolute -bottom-8 left-20 w-32 h-32 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+    <section
+      id="home"
+      aria-labelledby="hero-title"
+      className="gradient-cosmic relative flex min-h-screen min-h-[100svh] items-center overflow-hidden pt-32 pb-20"
+    >
+      {/* Luzes de fundo */}
+      <div className="absolute top-24 left-10 w-72 h-72 bg-white/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-10 w-96 h-96 bg-cyan-300/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_0%,#000_60%,transparent_100%)] pointer-events-none" />
 
-      <div className="container mx-auto px-4 py-16 relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-12 lg:gap-16 items-center">
+          {/* Texto */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-center md:text-left relative z-20"
           >
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-8 drop-shadow-lg">
-              Transforme sua Presença Digital em uma{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFA500] to-[#FF7F50] drop-shadow-[0_0_25px_rgba(96,239,255,0.6)]">
-                Máquina de Vendas
+            <h1
+              id="hero-title"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.55rem] font-extrabold leading-[1.14] mb-6 tracking-tight"
+            >
+              <span className="text-shine">
+                A solução digital certa para o seu cliente encontrar você na internet.
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-white/90 mb-10 max-w-lg leading-relaxed font-light">
-              Design impactante e estratégia focada em conversão. Não perca mais clientes para a concorrência: tenha um site que posiciona sua marca e vende 24h por dia.
+
+            <p className="text-base sm:text-lg md:text-xl text-white/85 mb-9 max-w-xl leading-relaxed font-light">
+              De <span className="text-shine-fast font-semibold">Landing Pages</span>,{" "}
+              <span className="text-shine-fast font-semibold">Sites Institucionais</span>,{" "}
+              <span className="text-shine-fast font-semibold">Bio para as redes sociais</span>{" "}
+              seja qual for seu projeto viabilizamos soluções que transmitem autoridade e colocam sua empresa no mercado digital.
             </p>
-            <Button
-              asChild
-              size="lg"
-              className="btn-cta text-lg uppercase tracking-wide group"
-            >
-              <a href="https://wa.me/5548984576217?text=Ol%C3%A1!%20Quero%20um%20site%20TOP!" target="_blank" rel="noopener noreferrer">
-                QUERO UM SITE TOP
-                <ArrowRight className="ml-2 transition-transform duration-300 group-hover:translate-x-1" size={24} />
-              </a>
-            </Button>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+              <Button
+                asChild
+                size="lg"
+                className="bg-white text-[#0052ff] hover:bg-[#eef5ff] text-lg sm:text-xl font-extrabold group w-full sm:w-auto hover:scale-105 transition-all duration-300 py-6 rounded-2xl shadow-[0_14px_35px_rgba(0,0,0,0.22)]"
+              >
+                <a href="https://wa.me/qr/SW4TC4J2EZVNM1" target="_blank" rel="noopener noreferrer">
+                  Sim, quero meu site profissional
+                  <ArrowRight
+                    className="ml-2 transition-transform duration-200 group-hover:translate-x-1.5"
+                    size={22}
+                  />
+                </a>
+              </Button>
+            </div>
+
+            <p className="mt-5 text-sm text-white/65">
+              Atendimento direto no WhatsApp · Orçamento sem compromisso
+            </p>
           </motion.div>
 
-          {/* Right Content - Rotating Videos */}
+          {/* Vitrine de vídeos */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             className="flex justify-center md:justify-end"
           >
-            <div className="relative w-full max-w-[600px]">
-              {/* Glow effect behind video */}
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/40 via-primary/30 to-transparent rounded-[2rem] blur-3xl scale-110 -z-10 animate-glow-pulse" />
+            <div className="relative w-full max-w-[720px] xl:max-w-[760px]">
+              <div className="absolute inset-0 bg-cyan-300/20 rounded-2xl blur-3xl scale-105 -z-10" />
 
-              <div className="relative aspect-video w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 bg-black/50">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={currentVideoIndex}
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.5, ease: "easeInOut" }}
-                    className="absolute inset-0 w-full h-full bg-black/50"
-                  >
-                    <video
-                      src={heroVideos[currentVideoIndex].src}
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                      className="w-full h-full object-cover"
-                    />
-                  </motion.div>
-                </AnimatePresence>
+              <div className="relative w-full rounded-xl overflow-hidden shadow-2xl border border-white/20 bg-[#061b3a]">
+                {/* Barra estilo navegador */}
+                <div
+                  aria-hidden="true"
+                  className="h-9 bg-[#061b3a] border-b border-white/10 px-4 flex items-center justify-between z-10 relative"
+                >
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-rose-400/80" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-amber-300/80" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-emerald-400/80" />
+                  </div>
+                  <div className="flex items-center gap-1.5 px-3 py-0.5 rounded-md bg-white/10 border border-white/15 text-[11px] text-white/80 font-sans">
+                    <span className="text-[10px]" aria-hidden="true">🔒</span>
+                    <span className="font-medium tracking-wide">codexsites.com.br</span>
+                  </div>
+                  <div className="w-12" />
+                </div>
+
+                <div className="relative aspect-video w-full bg-[#061b3a]">
+                  <AnimatePresence mode="wait">
+                    <motion.div
+                      key={currentVideoIndex}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -20 }}
+                      transition={{ duration: 0.5, ease: "easeInOut" }}
+                      className="absolute inset-0 w-full h-full bg-[#061b3a]"
+                    >
+                      <video
+                        src={heroVideos[currentVideoIndex].src}
+                        aria-label={`Prévia do projeto ${heroVideos[currentVideoIndex].alt}`}
+                        autoPlay={!prefersReducedMotion}
+                        muted
+                        loop
+                        playsInline
+                        preload="metadata"
+                        className="w-full h-full object-cover"
+                      />
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
               </div>
 
-              {/* Video indicators */}
-              <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 flex gap-3">
-                {heroVideos.map((_, index) => (
+              <div className="mt-3 flex items-center justify-center gap-1">
+                {heroVideos.map((video, index) => (
                   <button
                     key={index}
+                    type="button"
                     onClick={() => setCurrentVideoIndex(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentVideoIndex
-                      ? "bg-accent scale-150 shadow-[0_0_10px_rgba(255,144,19,0.8)]"
-                      : "bg-white/30 hover:bg-white/60"
+                    className="flex h-11 w-11 items-center justify-center rounded-full"
+                    aria-label={`Ver vídeo ${index + 1}: ${video.alt}`}
+                    aria-pressed={index === currentVideoIndex}
+                  >
+                    <span
+                      aria-hidden="true"
+                      className={`block h-1.5 rounded-full transition-all duration-300 ${
+                        index === currentVideoIndex
+                          ? "w-8 bg-white shadow-[0_0_12px_rgba(255,255,255,0.6)]"
+                          : "w-2 bg-white/35 hover:bg-white/60"
                       }`}
-                    aria-label={`Ver vídeo ${index + 1}`}
-                  />
+                    />
+                  </button>
                 ))}
               </div>
             </div>

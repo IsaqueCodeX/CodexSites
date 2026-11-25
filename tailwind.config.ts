@@ -2,7 +2,12 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -14,9 +19,23 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'],
+        sans: ["Poppins", "system-ui", "sans-serif"],
+        mono: ["Fira Code", "JetBrains Mono", "monospace"],
       },
       colors: {
+        // Paleta CodexSites — Azul, Branco e Azul-claro
+        codex: {
+          dark: "#0e1b2e",       // Azul-marinho (textos e superfícies escuras)
+          surface: "#ffffff",    // Branco (cards)
+          border: "#dbe6f5",     // Azul-cinza claro (bordas sutis)
+          title: "#0e1b2e",      // Azul-marinho (títulos)
+          muted: "#5b6b82",      // Cinza-azulado (parágrafos)
+          accent: "#0052ff",     // Azul da logo (botões, links, destaques)
+          "accent-hover": "#0066ff", // Azul hover
+          navy: "#061b3a",       // Azul profundo (navbar, footer, hero)
+          highlight: "#F29E18",  // Laranja/âmbar (ícones e selos de destaque sutil)
+          "highlight-glow": "rgba(242, 158, 24, 0.18)",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -60,19 +79,6 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
-        cosmic: {
-          start: "hsl(var(--cosmic-purple-start))",
-          end: "hsl(var(--cosmic-purple-end))",
-        },
-        cta: {
-          yellow: "hsl(var(--cta-yellow))",
-        },
-        footer: {
-          dark: "hsl(var(--footer-dark))",
-        },
-        check: {
-          pink: "hsl(var(--check-pink))",
-        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -81,20 +87,12 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
       animation: {

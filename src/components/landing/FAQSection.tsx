@@ -36,7 +36,7 @@ const faqItems: FAQItem[] = [
 
 const FAQSection = () => {
   return (
-    <section id="faq" className="py-20 bg-background">
+    <section id="faq" aria-labelledby="faq-title" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -45,8 +45,8 @@ const FAQSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Perguntas <span className="text-primary">Frequentes</span>
+          <h2 id="faq-title" className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Perguntas <span className="text-primary dark:text-[#60a5fa]">Frequentes</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Tire suas dúvidas sobre nossos serviços e processo de trabalho
@@ -65,9 +65,9 @@ const FAQSection = () => {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-card rounded-lg border border-border px-6 shadow-sm"
+                className="bg-card rounded-xl border border-border hover:border-primary/40 data-[state=open]:border-primary/60 data-[state=open]:shadow-md px-6 shadow-sm transition-all duration-200"
               >
-                <AccordionTrigger className="text-left text-foreground font-semibold hover:text-primary hover:no-underline">
+                <AccordionTrigger className="text-left text-foreground font-semibold hover:text-primary dark:hover:text-[#60a5fa] hover:no-underline">
                   {item.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground leading-relaxed">
@@ -88,10 +88,10 @@ const FAQSection = () => {
           <p className="text-muted-foreground">
             Ainda tem dúvidas?{" "}
             <a
-              href="https://wa.me/5548984576217"
+              href="https://wa.me/qr/SW4TC4J2EZVNM1"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary font-semibold hover:underline"
+              className="text-primary dark:text-[#60a5fa] font-semibold hover:underline"
             >
               Fale conosco no WhatsApp
             </a>

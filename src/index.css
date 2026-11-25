@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Fira+Code:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,81 +6,73 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 15%;
+    /* ═══════════════════════════════════════════════════════
+       Identidade CodexSites — Azul, Branco e Azul-claro
+       ═══════════════════════════════════════════════════════ */
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 15%;
+    --background: 0 0% 100%;         /* Branco */
+    --foreground: 217 53% 12%;       /* #0e1b2e (Azul-marinho / textos) */
+
+    --card: 0 0% 100%;               /* Branco */
+    --card-foreground: 217 53% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 15%;
+    --popover-foreground: 217 53% 12%;
 
-    --primary: 298 69% 22%; /* #ea5459 (Red-ish) */
+    --primary: 221 100% 50%;         /* #0052ff (Azul da logo) */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 205 46% 10%; /* #0E1C26 (Dark Background) */
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 214 100% 97%;       /* Azul bem claro */
+    --secondary-foreground: 221 100% 45%;
 
-    --muted: 210 20% 96%;
-    --muted-foreground: 215 20% 45%;
+    --muted: 214 50% 96%;            /* Azul-cinza claro */
+    --muted-foreground: 216 18% 43%; /* #5b6b82 */
 
-    --accent: 37 89% 52%; /* #f19e18 (Orange) */
+    --accent: 200 100% 50%;          /* #00a8ff (Azul claro) */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 215 20% 90%;
-    --input: 215 20% 90%;
-    --ring: 37 89% 52%; /* Matching Accent Orange */
+    --border: 214 45% 90%;           /* #dbe6f5 */
+    --input: 214 45% 90%;
+    --ring: 221 100% 50%;            /* #0052ff */
 
-    --radius: 0.5rem;
-
-    /* Custom colors for the landing page */
-    --cosmic-purple-start: 280 84% 41%; /* #8711c1 */
-    --cosmic-purple-end: 256 96% 44%; /* #3d05dd */
-    --cta-yellow: 37 89% 52%; /* Orange */
-    --footer-dark: 205 46% 5%;
-    --check-pink: 160 80% 55%; 
+    --radius: 0.75rem;
   }
 
   .dark {
-    --background: 0 0% 5%;
-    --foreground: 0 0% 98%;
+    /* ═══════════════════════════════════════════════════════
+       CodexSites Dark — Slate + Azul/Ciano vibrante
+       ═══════════════════════════════════════════════════════ */
 
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 98%;
+    --background: 222 47% 11%;       /* slate-900 (#0f172a) */
+    --foreground: 210 40% 98%;       /* slate-50 (#f8fafc) */
 
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 98%;
+    --card: 229 84% 5%;              /* slate-950 (#020617) */
+    --card-foreground: 210 40% 98%;
 
-    --primary: 358 79% 62%;
+    --popover: 229 84% 5%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 221 100% 50%;         /* #0052ff */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 205 46% 10%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 217 33% 17%;        /* slate-800 (#1e293b) */
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%; /* slate-400 (#94a3b8) */
 
-    --accent: 37 89% 52%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 187 100% 50%;          /* #00e5ff (ciano) */
+    --accent-foreground: 229 84% 5%;
 
-    --destructive: 0 62% 30%;
+    --destructive: 0 62% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 37 89% 52%;
-
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 217 33% 17%;           /* slate-800 */
+    --input: 217 33% 17%;
+    --ring: 187 100% 50%;
   }
 }
 
@@ -91,33 +83,96 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', system-ui, sans-serif;
+    overflow-x: hidden;
+    transition: background-color 0.35s ease, color 0.35s ease;
   }
 
   html {
+    color-scheme: light;
     scroll-behavior: smooth;
+    background-color: hsl(var(--background));
+    transition: background-color 0.35s ease;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  section[id] {
+    scroll-margin-top: 7rem;
+  }
+
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 3px;
+  }
+
+  header :focus-visible,
+  footer :focus-visible,
+  .gradient-cosmic :focus-visible {
+    outline-color: #ffffff;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  header,
+  footer,
+  section {
+    transition: background-color 0.35s ease, border-color 0.35s ease, color 0.35s ease;
   }
 }
 
 @layer utilities {
+  /* ═══ Fundo Azul Profundo (Hero e Serviços) ═══ */
   .gradient-cosmic {
-    background: linear-gradient(90deg, #0E1C26, #8711c1, #3d05dd);
+    background: linear-gradient(120deg, #061b3a 0%, #003db8 42%, #0052ff 68%, #00a8ff 100%);
     background-size: 200% 200%;
-    animation: gradient-move 8s ease infinite;
+    animation: gradient-move 10s ease infinite;
   }
 
+  /* ═══ Botão Principal — Azul da Logo com Azul-claro ═══ */
+  .btn-brand-hero {
+    background: linear-gradient(135deg, #0052ff 0%, #0066ff 45%, #00a8ff 100%);
+    color: #ffffff;
+    @apply font-extrabold px-8 py-5 sm:py-5 rounded-2xl border border-white/25 shadow-[0_10px_30px_rgba(0,82,255,0.35)] hover:shadow-[0_14px_40px_rgba(0,82,255,0.45)] transition-all duration-300 active:scale-[0.98] relative overflow-hidden inline-flex items-center justify-center;
+  }
+  .btn-brand-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.75s ease;
+  }
+  .btn-brand-hero:hover::before {
+    left: 140%;
+  }
+
+  /* ═══ Botão CTA — Azul sólido com hover mais claro ═══ */
   .btn-cta {
-    background: linear-gradient(90deg, #ea5459, #f19e18);
-    color: white;
-    @apply font-bold px-8 py-4 rounded-lg shadow-lg transition-all duration-300 relative overflow-hidden;
+    background: linear-gradient(135deg, #0052ff, #00a8ff);
+    color: #ffffff;
+    @apply font-bold px-7 py-3.5 rounded-xl border border-white/20 shadow-[0_8px_24px_rgba(0,82,255,0.28)] hover:shadow-[0_12px_30px_rgba(0,82,255,0.38)] transition-all duration-300 active:scale-[0.98] relative overflow-hidden inline-flex items-center justify-center;
   }
-
-  .btn-cta:hover {
-    background: linear-gradient(90deg, #f19e18, #ea5459);
-    @apply text-white shadow-[0_0_20px_rgba(241,158,24,0.8)] scale-105;
-    transform: translateY(-2px);
-  }
-  
   .btn-cta::after {
     content: '';
     position: absolute;
@@ -125,12 +180,93 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
     transition: 0.5s;
   }
-  
   .btn-cta:hover::after {
     left: 100%;
+  }
+
+  /* ═══ Botão Secundário — Branco com borda azul ═══ */
+  .btn-silver-blue {
+    background: #ffffff;
+    color: #0052ff;
+    @apply font-bold px-7 py-3 rounded-xl border border-[#0052ff]/25 shadow-sm hover:shadow-md hover:border-[#0052ff]/50 transition-all duration-300 active:scale-[0.98] inline-flex items-center justify-center;
+  }
+
+  /* ═══ Texto em Gradiente Azul (seções claras) ═══ */
+  .animate-gradient-text {
+    background: linear-gradient(135deg, #0052ff 0%, #0077ff 30%, #00a8ff 60%, #0066ff 100%);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 6s ease-in-out infinite;
+  }
+
+  /* ═══ Texto em Gradiente Claro (sobre fundo azul) ═══ */
+  .text-gradient-hero {
+    background: linear-gradient(135deg, #ffffff 0%, #bae6fd 45%, #67e8f9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-shine {
+    background: linear-gradient(110deg, rgba(255,255,255,0.9) 40%, #67e8f9 50%, rgba(255,255,255,0.9) 60%);
+    background-size: 260% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: text-shine 16s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  }
+
+  @keyframes text-shine {
+    0% { background-position: 200% 0; }
+    35% { background-position: 0% 0; }
+    47.5% { background-position: 0% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  .text-shine-subtle {
+    background: linear-gradient(110deg, rgba(255,255,255,0.85) 42%, #0052ff 50%, rgba(255,255,255,0.85) 58%);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: text-shine 6s ease-in-out infinite;
+  }
+
+  .text-shine-fast {
+    background: linear-gradient(110deg, rgba(255,255,255,0.9) 40%, #67e8f9 50%, rgba(255,255,255,0.9) 60%);
+    background-size: 260% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: text-shine-fast 3.5s ease-in-out infinite;
+  }
+
+  @keyframes text-shine-fast {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  /* ═══ Destaque Âmbar (ícones e selos) ═══ */
+  .text-highlight {
+    color: #f29e18;
+  }
+
+  .border-highlight {
+    border: 1px solid rgba(242, 158, 24, 0.45);
+  }
+
+  .glow-highlight {
+    box-shadow: 0 0 20px rgba(242, 158, 24, 0.18);
+  }
+
+  /* ═══ Painel de Superfície (Card Light) ═══ */
+  .surface-panel {
+    @apply bg-card border border-border rounded-xl shadow-sm;
+  }
+
+  /* ═══ Tag Monospace (Tech Badge) ═══ */
+  .tech-badge {
+    @apply font-mono text-xs px-2.5 py-1 rounded bg-secondary border border-border text-primary inline-flex items-center gap-1.5;
   }
 
   @keyframes float {
@@ -142,8 +278,14 @@
     0%, 100% { opacity: 0.5; transform: scale(1); }
     50% { opacity: 0.8; transform: scale(1.05); }
   }
-  
+
   @keyframes gradient-move {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @keyframes gradientShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
@@ -152,19 +294,26 @@
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
-  
+
   .animate-glow-pulse {
     animation: glow-pulse 4s ease-in-out infinite;
   }
 
-  /* Hide scrollbar for Chrome, Safari and Opera */
+  @keyframes scroll-hint {
+    0%, 100% { transform: translateY(-1px); }
+    50% { transform: translateY(4px); }
+  }
+
+  .animate-scroll-hint {
+    animation: scroll-hint 1.8s ease-in-out infinite;
+  }
+
+  /* Hide scrollbar */
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
-
-  /* Hide scrollbar for IE, Edge and Firefox */
   .scrollbar-hide {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }

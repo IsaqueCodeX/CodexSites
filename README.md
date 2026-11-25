@@ -1,4 +1,4 @@
-# Criando Sites - Landing Page
+# CodexSites - Landing Page
 
 Landing page de alta conversão desenvolvida para transformar visitantes em leads e vendas. Construída com tecnologias modernas para performance e impacto visual.
 
@@ -12,7 +12,11 @@ Este projeto é uma landing page de alta performance projetada para agências di
 
 ## Funcionalidades
 
-- **Seção Hero de Alto Impacto**: Imagens hero dinâmicas e rotativas com animações flutuantes e tipografia em gradiente.
+- **Acessibilidade (A11y)**: navegação por teclado, foco visível, `aria-labels`, link "pular para o conteúdo" e suporte a `prefers-reduced-motion`.
+- **Toggle de tema**: cápsula pill com lua crescente + estrelas (modo escuro) e sol geométrico (modo claro), com feedback visual de estado.
+- **Mobile-first**: viewport com `viewport-fit=cover`, alvos de toque de 44px e botão flutuante WhatsApp adaptado a telas pequenas.
+- **Favicon e logo ampliados**: ícone preenchendo o quadrado e logo em tamanhos maiores no Navbar/Footer.
+- **Seção Hero de Alto Impacto**: vídeos hero dinâmicos e rotativos com animações flutuantes e tipografia em gradiente.
 - **Navegação Responsiva**: Barra de navegação com glassmorphism que se adapta a telas móveis e desktop.
 - **Sistema de Design Moderno**: Configuração personalizada do Tailwind CSS com uma paleta de cores cósmica e tipografia profissional (Poppins).
 - **Elementos Interativos**: Efeitos de hover, rolagem suave e sequências de entrada animadas usando Framer Motion.
@@ -78,7 +82,7 @@ Siga estes passos para configurar o projeto localmente:
 1.  **Clonar o repositório**
     ```bash
     git clone <url-do-repositorio>
-    cd criandosites
+    cd CodexSites
     ```
 
 2.  **Instalar dependências**

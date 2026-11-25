@@ -1,31 +1,31 @@
-import clinicaEstetica from "../assets/Landingpage/Clínica Estética Premium.png";
-import academiaFitLife from "../assets/Landingpage/Academia FitLife.png";
-import consultoriaFinanceira from "../assets/Landingpage/Consultoria Financeira Capitalis.png";
-import marketingDigital from "../assets/Landingpage/Curso de Marketing Digital.png";
-import imobiliariaPremium from "../assets/Landingpage/Imobiliária Premium.png";
-import petShop from "../assets/Landingpage/Pet Shop Online.png";
-import restauranteGourmet from "../assets/Landingpage/Restaurante Gourmet.png";
-import lojaMoveis from "../assets/Landingpage/Loja de Móveis.png";
-import escolaIdiomas from "../assets/Landingpage/Escola de Idiomas.png";
-import clinicaOdontologica from "../assets/Landingpage/Clínica Odontológica.png";
-import agenciaViagens from "../assets/Landingpage/Agência de Viagens Horizon.png";
-import escritorioAdvocacia from "../assets/Landingpage/Escritório de Advocacia.png";
+import clinicaEstetica from "../assets/Landingpage/Clínica Estética Premium.webp";
+import academiaFitLife from "../assets/Landingpage/Academia FitLife.webp";
+import consultoriaFinanceira from "../assets/Landingpage/Consultoria Financeira Capitalis.webp";
+import marketingDigital from "../assets/Landingpage/Curso de Marketing Digital.webp";
+import imobiliariaPremium from "../assets/Landingpage/Imobiliária Premium.webp";
+import petShop from "../assets/Landingpage/Pet Shop Online.webp";
+import restauranteGourmet from "../assets/Landingpage/Restaurante Gourmet.webp";
+import lojaMoveis from "../assets/Landingpage/Loja de Móveis.webp";
+import escolaIdiomas from "../assets/Landingpage/Escola de Idiomas.webp";
+import clinicaOdontologica from "../assets/Landingpage/Clínica Odontológica.webp";
+import agenciaViagens from "../assets/Landingpage/Agência de Viagens Horizon.webp";
+import escritorioAdvocacia from "../assets/Landingpage/Escritório de Advocacia.webp";
 
 // Sites Institucionais
-import estrutura from "../assets/Institucionais/estrutura.png";
-import loveBrasa from "../assets/Institucionais/lovebrasa.png";
-import novaEra from "../assets/Institucionais/novaera.png";
-import obsidian from "../assets/Institucionais/obsidian.png";
-import solaris from "../assets/Institucionais/solaris.png";
-import vitalis from "../assets/Institucionais/vitalis.png";
+import estrutura from "../assets/Institucionais/estrutura.webp";
+import loveBrasa from "../assets/Institucionais/lovebrasa.webp";
+import novaEra from "../assets/Institucionais/novaera.webp";
+import obsidian from "../assets/Institucionais/obsidian.webp";
+import solaris from "../assets/Institucionais/solaris.webp";
+import vitalis from "../assets/Institucionais/vitalis.webp";
 
 // Bio Pro Instagram
-import drValente from "../assets/Bio Pro Instagram/drvalente-advogado.png";
-import drVitalis from "../assets/Bio Pro Instagram/drvitalis-estetica.png";
-import bioLoveBrasa from "../assets/Bio Pro Instagram/love-brasa.png";
-import bioObsidian from "../assets/Bio Pro Instagram/obsidian-auto.png";
-import ricardoHorizon from "../assets/Bio Pro Instagram/ricardo-horizon.png";
-import teamIron from "../assets/Bio Pro Instagram/team-iron-personal.png";
+import drValente from "../assets/Bio Pro Instagram/drvalente-advogado.webp";
+import drVitalis from "../assets/Bio Pro Instagram/drvitalis-estetica.webp";
+import bioLoveBrasa from "../assets/Bio Pro Instagram/love-brasa.webp";
+import bioObsidian from "../assets/Bio Pro Instagram/obsidian-auto.webp";
+import ricardoHorizon from "../assets/Bio Pro Instagram/ricardo-horizon.webp";
+import teamIron from "../assets/Bio Pro Instagram/team-iron-personal.webp";
 
 export type PortfolioCategory = "Landing Pages" | "Sites Institucionais" | "Bio Pro Instagram";
 

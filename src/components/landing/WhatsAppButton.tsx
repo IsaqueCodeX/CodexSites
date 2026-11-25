@@ -27,7 +27,7 @@ const WhatsAppButton = () => {
     <AnimatePresence>
       {isVisible && (
         <motion.a
-          href="https://wa.me/5548984576217"
+          href="https://wa.me/qr/SW4TC4J2EZVNM1"
           target="_blank"
           rel="noopener noreferrer"
           initial={{ scale: 0, opacity: 0 }}
@@ -35,7 +35,7 @@ const WhatsAppButton = () => {
           exit={{ scale: 0, opacity: 0 }}
           whileHover={{ scale: 1.1 }}
           transition={{ type: "spring", stiffness: 200, damping: 20 }}
-          className="fixed bottom-6 right-6 z-50 w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg transition-colors duration-200 group"
+          className="fixed bottom-4 right-4 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] shadow-lg transition-colors duration-200 group sm:bottom-6 sm:right-6 sm:h-16 sm:w-16"
           aria-label="Fale conosco no WhatsApp"
         >
           <MessageCircle className="text-white" size={32} />

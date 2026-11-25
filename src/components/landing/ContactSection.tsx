@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Send, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
 
-const WHATSAPP_URL = "https://wa.me/5548984576217";
+const WHATSAPP_URL = "https://wa.me/qr/SW4TC4J2EZVNM1";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -25,8 +25,7 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Validate inputs
+
     if (!formData.name.trim() || formData.name.length > 100) {
       toast.error("Por favor, insira um nome válido (máximo 100 caracteres)");
       return;
@@ -46,22 +45,20 @@ const ContactSection = () => {
 
     setIsSubmitting(true);
 
-    // Send via WhatsApp
     const whatsappMessage = encodeURIComponent(
       `Olá! Meu nome é ${formData.name.trim()}.\n\nEmail: ${formData.email.trim()}\nTelefone: ${formData.phone.trim() || "Não informado"}\n\nMensagem: ${formData.message.trim()}`
     );
-    
+
     window.open(`${WHATSAPP_URL}?text=${whatsappMessage}`, "_blank");
-    
+
     toast.success("Redirecionando para o WhatsApp...");
-    
-    // Reset form
+
     setFormData({ name: "", email: "", phone: "", message: "" });
     setIsSubmitting(false);
   };
 
   return (
-    <section id="contato" className="py-20 bg-muted/30">
+    <section id="contato" aria-labelledby="contact-title" className="py-20 bg-[#f3f7fd] dark:bg-slate-900 relative">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -70,11 +67,11 @@ const ContactSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Entre em <span className="text-primary">Contato</span>
+          <h2 id="contact-title" className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Entre em <span className="text-primary dark:text-[#60a5fa]">Contato</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Preencha o formulário abaixo e entraremos em contato o mais rápido possível
+            Preencha o formulário abaixo e conversamos diretamente sobre o seu projeto
           </p>
         </motion.div>
 
@@ -85,9 +82,12 @@ const ContactSection = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="max-w-xl mx-auto"
         >
-          <form onSubmit={handleSubmit} className="space-y-6 bg-card p-8 rounded-2xl shadow-lg">
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-6 bg-card p-8 rounded-2xl shadow-md border border-border hover:border-primary/30 transition-all duration-300"
+          >
             <div className="space-y-2">
-              <Label htmlFor="name">Nome *</Label>
+              <Label htmlFor="name" className="text-foreground font-medium">Nome *</Label>
               <Input
                 id="name"
                 name="name"
@@ -97,12 +97,12 @@ const ContactSection = () => {
                 onChange={handleChange}
                 maxLength={100}
                 required
-                className="bg-background"
+                className="bg-white dark:bg-slate-950 border-border focus:border-primary focus:ring-primary text-foreground placeholder:text-muted-foreground/60"
               />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="email">Email *</Label>
+              <Label htmlFor="email" className="text-foreground font-medium">Email *</Label>
               <Input
                 id="email"
                 name="email"
@@ -112,12 +112,12 @@ const ContactSection = () => {
                 onChange={handleChange}
                 maxLength={255}
                 required
-                className="bg-background"
+                className="bg-white dark:bg-slate-950 border-border focus:border-primary focus:ring-primary text-foreground placeholder:text-muted-foreground/60"
               />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="phone">Telefone</Label>
+              <Label htmlFor="phone" className="text-foreground font-medium">Telefone / WhatsApp</Label>
               <Input
                 id="phone"
                 name="phone"
@@ -126,30 +126,31 @@ const ContactSection = () => {
                 value={formData.phone}
                 onChange={handleChange}
                 maxLength={20}
-                className="bg-background"
+                className="bg-white dark:bg-slate-950 border-border focus:border-primary focus:ring-primary text-foreground placeholder:text-muted-foreground/60"
               />
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="message">Mensagem *</Label>
+              <Label htmlFor="message" className="text-foreground font-medium">Mensagem *</Label>
               <Textarea
                 id="message"
                 name="message"
-                placeholder="Como podemos ajudar você?"
+                placeholder="Como podemos ajudar você e o seu negócio?"
                 value={formData.message}
                 onChange={handleChange}
                 maxLength={1000}
                 required
                 rows={4}
-                className="bg-background resize-none"
+                className="bg-white dark:bg-slate-950 border-border focus:border-primary focus:ring-primary text-foreground placeholder:text-muted-foreground/60 resize-none"
               />
             </div>
 
             <Button
               type="submit"
               size="lg"
+              aria-busy={isSubmitting}
               disabled={isSubmitting}
-              className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold"
+              className="w-full bg-primary text-primary-foreground hover:bg-[#0066ff] font-bold shadow-lg shadow-primary/20 py-6 rounded-xl hover:scale-[1.01] transition-all"
             >
               {isSubmitting ? (
                 <>
